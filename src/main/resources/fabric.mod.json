@@ -3,10 +3,12 @@
   "id": "limited_milk",
   "version": "${version}",
   "name": "LimitedMilk",
-  "description": "",
-  "authors": [],
+  "description": "Milk",
+  "authors": [
+    "Jinenze"
+  ],
   "contact": {
-    "repo": "https://github.com/xiaoj/LimitedMilk"
+    "sources": "https://github.com/Jinenze/LimitedMilk"
   },
   "license": "MIT",
   "icon": "assets/limited_milk/icon.png",
