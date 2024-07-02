@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "limited_milk",
-  "version": "${version}",
+  "version": "0.2.0",
   "name": "LimitedMilk",
   "description": "Milk",
   "authors": [
@@ -16,6 +16,9 @@
   "entrypoints": {
     "main": [
       "com.jez.milk.LimitedMilk"
+    ],
+    "jade": [
+      "com.jez.milk.dependencies.jade.MilkPlugin"
     ]
   },
   "mixins": [

@@ -1,5 +1,6 @@
 package com.jez.milk.mixin;
 
+import com.jez.milk.dependencies.jade.LastMilkGetter;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.CowEntity;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(CowEntity.class)
-public abstract class CowEntityMixin extends AnimalEntity {
+public abstract class CowEntityMixin extends AnimalEntity implements LastMilkGetter {
     @Unique
     private int lastMilk;
 
@@ -30,7 +31,7 @@ public abstract class CowEntityMixin extends AnimalEntity {
     }
 
     @Inject(method = "interactMob", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;setStackInHand(Lnet/minecraft/util/Hand;Lnet/minecraft/item/ItemStack;)V"))
-    private void interactMobInjectTail(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir){
+    private void interactMobInjectTail(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         lastMilk = 24000;
     }
 
@@ -38,6 +39,14 @@ public abstract class CowEntityMixin extends AnimalEntity {
     @Override
     public void tickMovement() {
         super.tickMovement();
-        --lastMilk;
+        if (lastMilk > 0) {
+            --lastMilk;
+        }
+    }
+
+    @Unique
+    @Override
+    public int getLastMilk() {
+        return lastMilk;
     }
 }
