@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "limited_milk",
+  "version": "${version}",
+  "name": "LimitedMilk",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/xiaoj/LimitedMilk"
+  },
+  "license": "MIT",
+  "icon": "assets/limited_milk/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.jez.milk.LimitedMilk"
+    ]
+  },
+  "mixins": [
+    "limited_milk.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.20.0"
+  }
+}
