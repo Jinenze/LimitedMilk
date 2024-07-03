@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "limited_milk",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "name": "LimitedMilk",
   "description": "Milk",
   "authors": [
@@ -19,13 +19,16 @@
     ],
     "jade": [
       "com.jez.milk.dependencies.jade.MilkPlugin"
+    ],
+    "modmenu": [
+      "com.jez.milk.config.ModMenuEntry"
     ]
   },
   "mixins": [
     "limited_milk.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.0",
-    "minecraft": ">=1.20.0"
+    "fabricloader": "*",
+    "minecraft": "*"
   }
 }

@@ -21,7 +21,7 @@ public enum MilkComponentProvider implements IServerDataProvider<EntityAccessor>
         if (entityAccessor.getServerData().contains(KEY)) {
             iTooltip.append(
                     Text.translatable(
-                            "tooltip.limited_milk.last_milk",
+                            "tooltip.limited-milk.last_milk",
                             entityAccessor.getServerData().getInt(KEY)
                     )
             );

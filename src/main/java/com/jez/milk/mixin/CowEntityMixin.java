@@ -1,5 +1,6 @@
 package com.jez.milk.mixin;
 
+import com.jez.milk.LimitedMilk;
 import com.jez.milk.dependencies.jade.LastMilkGetter;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -32,7 +33,7 @@ public abstract class CowEntityMixin extends AnimalEntity implements LastMilkGet
 
     @Inject(method = "interactMob", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;setStackInHand(Lnet/minecraft/util/Hand;Lnet/minecraft/item/ItemStack;)V"))
     private void interactMobInjectTail(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
-        lastMilk = 24000;
+        lastMilk = LimitedMilk.config.milkTick;
     }
 
     @Unique

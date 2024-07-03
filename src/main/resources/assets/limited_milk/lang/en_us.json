@@ -1,3 +1,7 @@
 {
-  "tooltip.limited_milk.last_milk": "Milk: %d"
+  "tooltip.limited-milk.last_milk": "Milk: %d",
+
+  "text.autoconfig.limited-milk.option.config.milkTick": "Tick",
+  "text.autoconfig.limited-milk.option.config.needJade": "Jade",
+  "text.autoconfig.limited-milk.option.config.needJade.@Tooltip": "only on server start"
 }
